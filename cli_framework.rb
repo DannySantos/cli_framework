@@ -7,12 +7,12 @@ def instant_gets
   end
 end
 
-def indent(content, spaces = "43")
-  printf "%#{spaces}s %s\n", " ", "#{content}"
+def indent(content, spaces = 30)
+  print "#{" "*spaces} #{content}"
 end
 
-def blank_indent(spaces = "44")
-  printf "%#{spaces}s", " "
+def blank_indent(spaces = 44)
+  puts "#{" "*spaces}\n"
 end
 
 def br(breaks = 1)
@@ -21,20 +21,29 @@ def br(breaks = 1)
   end
 end
 
+def centre(content, width = 80)
+  if content.length < width
+    indent_length = (width / 2.0) - (content.length / 2.0)
+  else
+    indent_length = width
+  end
+  " "*indent_length + content
+end
+
 def hr(type = "-")
   if type == "="
-    indent("============================================================================================== ")
+    ("="*80)+"\n"
   else
-    indent("---------------------------------------------------------------------------------------------- ")
+    ("-"*80)+"\n"
   end
 end
 
 def invalid_command
   br
-  indent("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
-  indent("!!                                                                                          !!")
-  indent("!!                                      INVALID COMMAND!                                    !!")
-  indent("!!                                                                                          !!")
-  indent("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
+  indent("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!",10)
+  indent("!!                                                                                          !!",10)
+  indent("!!                                      INVALID COMMAND!                                    !!", 10)
+  indent("!!                                                                                          !!", 10)
+  indent("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!", 10)
   br(2)
 end

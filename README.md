@@ -1,4 +1,4 @@
-CLI FRAMEWORK
+#CLI FRAMEWORK
 
 CLI Framework is a basic command line interface framework containing methods for layout.
 
@@ -17,8 +17,13 @@ blank_indent()
   Indent line without line break
   Useful in conjunction with instant_gets (needs to be 1 space more than regular indent for this)
   ----- indent("Main Menu", 20)
-  ----- blanck_indent(21)
+  ----- blank_indent(21)
   ----- instant_gets
+  
+centre()
+  Centre content in a line.
+  Default screen width is 80 but this is optional
+  ---- centre("Main Menu", 80)
   
 br()  
   Line break
@@ -27,7 +32,7 @@ br()
   ----- br(2)
   ----- blanck_indent(21)
   ----- instant_gets
-  
+
 hr()
   Horizontal rule
   Optional: pass in "=" for double line instead of single
