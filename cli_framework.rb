@@ -12,7 +12,7 @@ def indent(content, spaces = 30)
 end
 
 def blank_indent(spaces = 44)
-  puts "#{" "*spaces}\n"
+  print "#{" "*spaces}"
 end
 
 def br(breaks = 1)
